@@ -48,9 +48,9 @@
 
     function getJson(){
     var  httpResq = new XMLHttpRequest(); // cria objeto para pegar a url da API
-    var url = "https://demo6279324.mockable.io/teste"; // caminho da API
-    httpResq.open("GET", url, false); // abre a conexão com API (pede metodo, o caminho ou a varivel com o caminho e informar se a chama é sincrona ou assíncrona)
-    httpResq.send(null); // devolve para API alguma informação, neste caso a API não faz nenhum tipo de requisição
+    var url = "https://demo6279324.mockable.io/teste"; // variavel com o caminho da API
+    httpResq.open("GET", url, false); // abre a conexão com API (pede o método, o caminho ou a varivel com o caminho e informar se a chamada é sincrona ou assíncrona(se ela possui algum tipo de delay na respota a chamada))
+    httpResq.send(null); // devolve para API alguma requsição (senha,id,token etc..), neste caso a API não faz nenhum tipo de requisição
 
     var resposta = JSON.parse(httpResq.responseText);// converte os dados da API em JSON
     console.log(resposta); // exibindo o return no console
@@ -63,14 +63,14 @@
       var clientes = getJson();// recebe os dados da função de conexão com a API
       $.each(clientes, function(index,item){ // foreach para exibir todos os dados copiados
         var linha = "<tr>";// variavel que repesenta a linha da coluna
-        linha += "<td>" + item.id +"</td>"; // criando intem que será exibido na primeira coluna  
-        linha += "<td>" + item.nome +"</td>";// criando intem que será exibido na segunda coluna  
-        linha += "<td>" + item.idade +"</td>";// criando intem que será exibido na terceira coluna  
-        linha += "<td>" + item.rg +"</td>";// criando intem que será exibido na quarta coluna
+        linha += "<td>" + item.id +"</td>"; // criando item que será exibido na primeira coluna  
+        linha += "<td>" + item.nome +"</td>";// criando item que será exibido na segunda coluna  
+        linha += "<td>" + item.idade +"</td>";// criando item que será exibido na terceira coluna  
+        linha += "<td>" + item.rg +"</td>";// criando item que será exibido na quarta coluna
         linha += "</tr>"
       
       
-          $("#cliente").append(linha);// função para inserir uma função em baixo da outra.
+          $("#cliente").append(linha);// função para inserir uma linha em baixo da outra.
       });
     }
  
